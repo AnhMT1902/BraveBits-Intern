@@ -40,6 +40,25 @@ function main() {
         </td>
     </tr>`
     document.getElementById('calc-app').innerHTML = htmlData;
+    document.getElementById('calc-app').addEventListener("click", (e) => {
+        if (e.target.matches(".ripple")) {
+            const x = e.clientX - e.target.offsetLeft;
+            const y = e.clientY - e.target.offsetTop;
+            console.log(e.target.offsetLeft);
+            const circle = document.createElement('span');
+            circle.classList.add('ripple-effect');
+            circle.style.left = x + 'px';
+            circle.style.top = y + 'px';
+            let buttons = document.querySelectorAll('.ripple');
+            buttons.forEach((button) => {
+                if (button.offsetLeft === e.target.offsetLeft && button.offsetTop === e.target.offsetTop) {
+                    console.log(button)
+                    button.appendChild(circle)
+                }
+            })
+            setTimeout(() => circle.remove(), 500);
+        }
+    })
 }
 
 main();
@@ -72,7 +91,6 @@ function calculate() {
     let value = document.getElementById('inp').value;
     if (value !== '') {
         let calc = `${eval(value)}`
-        console.log(calc.includes('.'))
         if (calc.includes('.')) {
             return document.getElementById('inp').value = calc.substring(0, calc.indexOf('.') + 6);
         } else {
@@ -89,12 +107,8 @@ function handleKeyPress(value, className) {
 
 function rollbackValue() {
     let value = document.getElementById('inp').value;
-    console.log(value)
     document.getElementById('inp').value = value.substring(0, value.length - 1)
     if (document.getElementById('inp').value === '') {
         document.getElementById('inp').value = 0
     }
 }
-$('#button').onClick(function(){
-    $('#target_element').addClass('animate_class_name');
-});
