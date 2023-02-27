@@ -44,15 +44,13 @@ function main() {
         if (e.target.matches(".ripple")) {
             const x = e.clientX - e.target.offsetLeft;
             const y = e.clientY - e.target.offsetTop;
-            console.log(e.target.offsetLeft);
             const circle = document.createElement('span');
             circle.classList.add('ripple-effect');
             circle.style.left = x + 'px';
             circle.style.top = y + 'px';
-            let buttons = document.querySelectorAll('.ripple');
+            const buttons = document.querySelectorAll('.ripple');
             buttons.forEach((button) => {
                 if (button.offsetLeft === e.target.offsetLeft && button.offsetTop === e.target.offsetTop) {
-                    console.log(button)
                     button.appendChild(circle)
                 }
             })

@@ -94,3 +94,7 @@ span {
         transform: scale(10);
     }
 }
+
+h2 {
+    font-family: 'Ubuntu', sans-serif;
+}

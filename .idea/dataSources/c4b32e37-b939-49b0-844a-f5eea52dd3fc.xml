@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost">
+  <database-model serializer="dbm" dbms="MONGO" family-id="MONGO" format-version="4.41">
+    <root id="1">
+      <ServerVersion>6.0.3</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="Car"/>
+    <schema id="3" parent="1" name="admin"/>
+    <schema id="4" parent="1" name="config"/>
+    <schema id="5" parent="1" name="demoC07"/>
+    <schema id="6" parent="1" name="finance"/>
+    <schema id="7" parent="1" name="local"/>
+    <schema id="8" parent="1" name="managerStudent"/>
+    <schema id="9" parent="1" name="test_technical"/>
+    <table id="10" parent="2" name="cars"/>
+    <table id="11" parent="2" name="companies"/>
+    <column id="12" parent="10" name="_id">
+      <DataType>ObjectId|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="13" parent="10" name="company">
+      <DataType>ObjectId|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="14" parent="10" name="name">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="15" parent="10" name="price">
+      <DataType>Int32|4s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="16" parent="10" name="__v">
+      <DataType>Int32|4s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="17" parent="10" name="quantity">
+      <DataType>Int32|4s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="18" parent="11" name="_id">
+      <DataType>ObjectId|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="19" parent="11" name="__v">
+      <DataType>Int32|4s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="20" parent="11" name="description">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+    <column id="21" parent="11" name="name">
+      <DataType>String|12s</DataType>
+      <Position>1</Position>
+    </column>
+  </database-model>
+</dataSource>
